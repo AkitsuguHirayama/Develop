@@ -22,14 +22,17 @@
           <li class="nav-item">
             <a class="nav-link" href="#">体験記</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">マイページ</a>
+          </li>
           <!-- ドロップダウンタイプ -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               ログイン/登録
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">ログイン</a>
-              <a class="dropdown-item" href="#">ユーザー登録</a>
+              <%= link_to 'ログイン', login_path, class: "dropdown-item" %>
+              <%= link_to 'ユーザー登録', new_user_path, class: "dropdown-item" %>
             </div>
           </li>
         </ul>
