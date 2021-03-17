@@ -1,6 +1,6 @@
 <!-- ナビゲーションバー -->    
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#"><h1 class="title">#####</h1></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,8 +19,14 @@
            <li class="nav-item">
              <%= link_to '過去の質問',"#", class: "nav-link" %>
            </li>
-          <li class="nav-item">
-            <%= link_to '体験記',"#", class: "nav-link" %>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                体験記
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to '体験記を閲覧する', "#", class: "dropdown-item" %>
+                <%= link_to '体験記を投稿する', "new_topic_path", class: "dropdown-item" %>
+              </div>
           </li>
           <li class="nav-item">
             <%= link_to 'マイページ',"#", class: "nav-link" %>
@@ -38,7 +44,7 @@
             </li>
           <% else %>
             <li class="nav-item">
-            <%= link_to 'ログアウト',"#", class: "nav-link" %>
+            <%= link_to 'ログアウト', logout_path, class: "nav-link", data: { confirm: 'ログアウトしますか？' } %>
             </li>
           <% end %>
         </ul>
@@ -49,7 +55,7 @@
 
 <div class="top-hero-wrapper text-center">
   <div class="container top-hero-container">
-    <h1 class="title">#####</h1>
+    <br><br><br><br><br>
     <h2 class="sub-title">専門家に直接ご相談</h2>
     <div class="row">
       <div class="col-xl-md-offset-1 col-md-2">
