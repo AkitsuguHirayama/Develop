@@ -14,7 +14,7 @@
             <%= link_to '基礎知識',"#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to '助産師へ質問',"#", class: "nav-link" %>
+            <%= link_to '助産師へ質問', new_question_path, class: "nav-link" %>
           </li>
            <li class="nav-item">
              <%= link_to '過去の質問',"#", class: "nav-link" %>
@@ -24,13 +24,15 @@
                 体験記
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <%= link_to '体験記を閲覧する', "#", class: "dropdown-item" %>
+                <%= link_to '体験記を閲覧する', topics_path, class: "dropdown-item" %>
                 <%= link_to '体験記を投稿する', new_topic_path, class: "dropdown-item" %>
               </div>
           </li>
+          <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to 'マイページ',"#", class: "nav-link" %>
+            <%= link_to 'マイページ',  user_path(id: current_user.id), class: "nav-link" %>
           </li>
+          <% end %>
           <!-- ドロップダウンタイプ -->
           <% if !logged_in? %>
             <li class="nav-item dropdown">

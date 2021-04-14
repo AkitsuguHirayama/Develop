@@ -1,10 +1,10 @@
-class CreateUsers < ActiveRecord::Migration[5.2]
+class Users < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :pregnantday
-      t.string :birthday
+      t.date :pregnantday
+      t.date :birthday
     end
   end
 end
