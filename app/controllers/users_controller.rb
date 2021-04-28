@@ -17,6 +17,20 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+  
+  def show
+    # @user = User.where(user_id: current_user.id)
+  end
+  
   def edit
     # binding.pry
     @user = User.find(params[:id])
@@ -30,7 +44,7 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :pregnantday)
   end
   
   def log_out
@@ -42,9 +56,7 @@ class UsersController < ApplicationController
 
   # before_action :set_user, only: [:show]
 
-  def show
-    # @user = User.where(user_id: current_user.id)
-  end
+  
 
   private
   def set_user

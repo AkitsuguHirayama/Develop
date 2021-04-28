@@ -80,6 +80,8 @@ h3 {
 .btn-black {
   color: #565656;
   border: 1px solid #565656;
+  width: 200px;
+  height: auto;
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 20px;
@@ -105,6 +107,7 @@ h3 {
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
+    
     .topic-author {
       padding-right: 20px;
       padding-left: 20px;
@@ -133,3 +136,8 @@ h3 {
  .contents {
       padding-top: 80px;
     }
+    
+  .date-form {
+    width: 200px;
+    height: 30px;
+  }
