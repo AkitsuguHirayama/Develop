@@ -1,3 +1,4 @@
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="navbar-brand"><h2 class="title"><%= current_user.name %>さんの情報を登録・編集</h2></div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,4 +20,15 @@
               <%= link_to 'パスワードの変更', "#", class: "nav-link" %>
             </li>
           </ul>
+        </div>
+        </nav>
+        
+        <div class="top-hero-wrapper text-center contents">
+         <div class="container top-hero-container">
+          <%= form_for @user do |f| %>
+            <%= f.date_field :birthday %>
+            <%= f.date_field :pregnantday %>
+          <%= f.submit '送信', class: 'btn btn-black btn-block' %>
+          <% end %>
+          </div>
         </div>

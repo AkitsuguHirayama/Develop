@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
+  def index
+   
   end
   
-  def index
-  
+  def new
+    @user = User.new
   end
   
   def create
@@ -17,10 +17,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    # binding.pry
+    @user = User.find(params[:id])
+  end
+  
   def destroy
     log_out
     redirect_to root_url, info: 'ログアウトしました'
   end
+  
   
   private
   def user_params
@@ -32,9 +38,7 @@ class UsersController < ApplicationController
     @current_user = nil
   end
   
-  def edit
-    @user = User.find_by(id: params[:id])
-  end
+  
 
   # before_action :set_user, only: [:show]
 
