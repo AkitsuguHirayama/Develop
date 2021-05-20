@@ -18,12 +18,13 @@ class UsersController < ApplicationController
   end
   
   def update
+    # binding.pry
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
+    if @user.update(user_params)
+      redirect_to edit_user_path, success: 'プロフィールを更新しました'
     else
-      render 'edit'
+      flash.now[:danger] = "プロフィールの更新に失敗しました"
+      render :edit
     end
   end
   
@@ -44,7 +45,8 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :pregnantday)
+    # params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :pregnantday)
+    params.require(:user).permit(:birthday, :pregnantday)
   end
   
   def log_out

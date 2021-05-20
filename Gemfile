@@ -70,3 +70,4 @@ gem 'bcrypt'
 gem 'bootstrap', '~> 4.1.1'
 gem "carrierwave"
 gem 'devise'
+gem 'rails-erd'
